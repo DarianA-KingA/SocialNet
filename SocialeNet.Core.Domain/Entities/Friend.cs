@@ -11,8 +11,10 @@ namespace SocialeNet.Core.Domain.Entities
         public int Id { get; set; }
 
         public int FromId { get; set; }
+
         public int ToId { get; set; }
-         //Navigation Property 
+         
+        //Navigation Property 
         public User User { get; set; }
 
 

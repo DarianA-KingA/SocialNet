@@ -16,7 +16,7 @@ namespace SocialeNet.Core.Domain.Entities
         //navigation property
         public User User { get; set; }
 
-        public Publication Publication { get; set; }
+        public Publications Publication { get; set; }
 
     }
 }

@@ -1,7 +1,33 @@
-﻿
+﻿@using SocialNet.Core.Application.ViewModels.User
+@model LoginViewModel
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Login";
 }
 
-<h1>Index</h1>
+<div class="row mt-5">
+    <div class="col-6 offset-3">
+        <div class="card shadow-sm" >
+            <div class="card-body">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                <form method="post" asp-controller="User" asp-action="Index">
+                    <div class="mb-3">
+                        <label asp-for="UserName" class="form-label">Nombre de usuario</label>
+                        <input class="form-control" asp-for="UserName">
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Contraseña</label>
+                        <input class="form-control" asp-for="Password">
+                    </div>
+                    <a asp-controller="User" asp-action="UpdatePassword">Reset Password</a>
+                    <div style="text-align:center">
+                        <button type="submit" class="btn btn-primary">Iniciar sección</button>
+                        <a asp-controller="User" asp-action="Register" class="btn btn-warning">Registrarse</a>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
 

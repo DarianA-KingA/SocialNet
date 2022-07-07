@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SocialNet.Core.Application.Interfaces.Repository;
 using SocialNet.Infrastructure.Persistence.Context;
+using SocialNet.Infrastructure.Persistence.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +29,15 @@ namespace SocialNet.Infrastructure.Persistence
                     m => m.MigrationsAssembly(typeof(SocialNetContext).Assembly.FullName));
                 });
             }
+            #endregion
+
+            #region Repositories
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IComentaryRepository, ComentaryRepository>();
+            services.AddTransient<IFriendRepository, FriendRepository>();
+            services.AddTransient<IPictureRepository, PictureRepository>();
+            services.AddTransient<IPublicationRepository, PublicationRepository>();
+            services.AddTransient<IUserRepository, UserRepository>();
             #endregion
         }
     }

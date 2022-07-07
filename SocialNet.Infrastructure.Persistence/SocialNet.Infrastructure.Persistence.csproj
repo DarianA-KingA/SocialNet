@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SocialeNet.Core.Domain\SocialeNet.Core.Domain.csproj" />
+    <ProjectReference Include="..\SocialNet.Core.Application\SocialNet.Core.Application.csproj" />
   </ItemGroup>
 
 </Project>

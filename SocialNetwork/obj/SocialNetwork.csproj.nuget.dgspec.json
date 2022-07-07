@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\SocialNet.Infrastructure.Persistence.csproj": {
+    "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Core.Application\\SocialNet.Core.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\SocialNet.Infrastructure.Persistence.csproj",
-        "projectName": "SocialNet.Infrastructure.Persistence",
-        "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\SocialNet.Infrastructure.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Core.Application\\SocialNet.Core.Application.csproj",
+        "projectName": "SocialNet.Core.Application",
+        "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Core.Application\\SocialNet.Core.Application.csproj",
         "packagesPath": "C:\\Users\\Darian\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\obj\\",
+        "outputPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Core.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -106,6 +106,109 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[11.0.0, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\SocialNet.Infrastructure.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\SocialNet.Infrastructure.Persistence.csproj",
+        "projectName": "SocialNet.Infrastructure.Persistence",
+        "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\SocialNet.Infrastructure.Persistence.csproj",
+        "packagesPath": "C:\\Users\\Darian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Darian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialeNet.Core.Domain\\SocialeNet.Core.Domain.csproj": {
+                "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialeNet.Core.Domain\\SocialeNet.Core.Domain.csproj"
+              },
+              "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Core.Application\\SocialNet.Core.Application.csproj": {
+                "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Core.Application\\SocialNet.Core.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[5.0.17, )"
@@ -117,6 +220,85 @@
             "Microsoft.Extensions.Options.ConfigurationExtensions": {
               "target": "Package",
               "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "c:\\program files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Shared\\SocialNet.Infrastructure.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Shared\\SocialNet.Infrastructure.Shared.csproj",
+        "projectName": "SocialNet.Infrastructure.Shared",
+        "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Shared\\SocialNet.Infrastructure.Shared.csproj",
+        "packagesPath": "C:\\Users\\Darian\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Darian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialeNet.Core.Domain\\SocialeNet.Core.Domain.csproj": {
+                "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialeNet.Core.Domain\\SocialeNet.Core.Domain.csproj"
+              },
+              "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Core.Application\\SocialNet.Core.Application.csproj": {
+                "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Core.Application\\SocialNet.Core.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[3.3.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[3.3.0, )"
             }
           },
           "imports": [
@@ -168,6 +350,9 @@
             "projectReferences": {
               "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\SocialNet.Infrastructure.Persistence.csproj": {
                 "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Persistence\\SocialNet.Infrastructure.Persistence.csproj"
+              },
+              "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Shared\\SocialNet.Infrastructure.Shared.csproj": {
+                "projectPath": "C:\\Users\\Darian\\source\\repos\\SocialNetwork\\SocialNet.Infrastructure.Shared\\SocialNet.Infrastructure.Shared.csproj"
               }
             }
           }

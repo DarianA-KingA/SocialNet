@@ -66,6 +66,9 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.Property<int>("FromId")
                         .HasColumnType("int");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<int>("ToId")
                         .HasColumnType("int");
 
@@ -168,7 +171,7 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Pasword")
+                    b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")

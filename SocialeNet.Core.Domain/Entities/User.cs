@@ -15,10 +15,10 @@ namespace SocialeNet.Core.Domain.Entities
         public string ImageUrl { get; set; }
         public string Email { get; set; }
         public string UserName { get; set; }
-        public string Pasword { get; set; }
+        public string Password { get; set; }
 
         //navigation property
-        public ICollection<Publication> Publications { get; set; }
+        public ICollection<Publications> Publications { get; set; }
         public ICollection<Comentary> Comentaries { get; set; }
 
         public ICollection<Friend> Friends { get; set; }

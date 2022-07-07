@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SocialNet.Infrastructure.Persistence\SocialNet.Infrastructure.Persistence.csproj" />
+    <ProjectReference Include="..\SocialNet.Infrastructure.Shared\SocialNet.Infrastructure.Shared.csproj" />
   </ItemGroup>
 
 </Project>

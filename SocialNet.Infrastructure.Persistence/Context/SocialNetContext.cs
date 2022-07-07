@@ -16,8 +16,7 @@ namespace SocialNet.Infrastructure.Persistence.Context
         {
         }
         public DbSet<Comentary> Comentaries { get; set; }
-        public DbSet<Picture> pictures { get; set; }
-        public DbSet<Publication> publications { get; set; }
+        public DbSet<Publications> publications { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Friend> Friends { get; set; }
 
@@ -46,10 +45,7 @@ namespace SocialNet.Infrastructure.Persistence.Context
             modelBuilder.Entity<Comentary>()
                 .ToTable("Comentaries");
 
-            modelBuilder.Entity<Picture>()
-                .ToTable("Pictures");
-
-            modelBuilder.Entity<Publication>()
+            modelBuilder.Entity<Publications>()
                 .ToTable("Publications");
 
             modelBuilder.Entity<User>()
@@ -63,10 +59,7 @@ namespace SocialNet.Infrastructure.Persistence.Context
             modelBuilder.Entity<Comentary>()
                 .HasKey(Comentary => Comentary.Id);
 
-            modelBuilder.Entity<Picture>()
-                .HasKey(picture => picture.Id);
-
-            modelBuilder.Entity<Publication>()
+            modelBuilder.Entity<Publications>()
                 .HasKey(publication => publication.Id);
 
             modelBuilder.Entity<User>()
@@ -78,7 +71,7 @@ namespace SocialNet.Infrastructure.Persistence.Context
 
             #region Relationships
             modelBuilder.Entity<User>()
-                .HasMany<Publication>(user => user.Publications)
+                .HasMany<Publications>(user => user.Publications)
                 .WithOne(publication => publication.User)
                 .HasForeignKey(publications => publications.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
@@ -89,13 +82,7 @@ namespace SocialNet.Infrastructure.Persistence.Context
                 .HasForeignKey(comentary => comentary.UserId)
                 .OnDelete(DeleteBehavior.NoAction);
 
-            modelBuilder.Entity<Publication>()
-                .HasMany<Picture>(publication => publication.Pictures)
-                .WithOne(pictue => pictue.Publication)
-                .HasForeignKey(picture => picture.PublicationId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<Publication>()
+            modelBuilder.Entity<Publications>()
                 .HasMany<Comentary>(publication => publication.Comentaries)
                 .WithOne(comentary => comentary.Publication)
                 .HasForeignKey(comentary => comentary.PublicationId)
