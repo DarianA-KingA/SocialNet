@@ -46,6 +46,10 @@ namespace SocialNet.Core.Application.ViewModels.User
         [Required(ErrorMessage = "Debe colocar una contraseña")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
+        [DataType(DataType.Text)]
+        public bool status { get; set; }
+        public string ConfirmationCode { get; set; }
+
 
     }
 }

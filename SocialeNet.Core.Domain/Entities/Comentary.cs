@@ -14,7 +14,7 @@ namespace SocialeNet.Core.Domain.Entities
 
         public string UserComentary { get; set; }
         //navigation property
-        public User User { get; set; }
+        public Users User { get; set; }
 
         public Publications Publication { get; set; }
 

@@ -8,8 +8,11 @@ using System.Threading.Tasks;
 
 namespace SocialNet.Core.Application.Interfaces.Repository
 {
-    public interface IUserRepository : IGenericRepository<User>
+    public interface IUserRepository : IGenericRepository<Users>
     {
-        Task<User> LoginAsync(LoginViewModel loginVm);
+        Task<Users> LoginAsync(LoginViewModel loginVm);
+        Task<Users> ActivateUserAsync(ConfirmUserViewModel confirmVm);
+        Task<Users> FindUserNameAsync(SaveUserViewModel vm);
+
     }
 }

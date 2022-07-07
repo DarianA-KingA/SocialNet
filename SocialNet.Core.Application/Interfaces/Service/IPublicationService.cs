@@ -10,5 +10,7 @@ namespace SocialNet.Core.Application.Interfaces.Service
 {
     public interface IPublicationService : IGenericService<SavePublicationViewModel, PublicationViewModel, Publications>
     {
+        Task<List<PublicationViewModel>> GetAllAsyncByUser();
+        Task<List<PublicationViewModel>> GetAllAsyncByFriend(List<int> idFriends);
     }
 }

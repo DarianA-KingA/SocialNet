@@ -12,10 +12,9 @@
                 <div class="card-header bg-dark text-light">
                     <h4>Registro de nuevo usuario</h4>
                 </div>
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
                 <div class="card-body">
-
-
-                    <form method="post" asp-controller="User" asp-action="Register" enctype = "multipart/form-data">
+                    <form method="post" asp-controller="User" asp-action="Register" enctype="multipart/form-data">
 
                         <div class="mb-3">
                             <label asp-for="Name" class="form-label">Nombre: </label>

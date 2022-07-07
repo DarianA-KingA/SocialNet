@@ -56,18 +56,27 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.ToTable("Comentaries");
                 });
 
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Friend", b =>
+            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Friends", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<int>("FromId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("Status")
-                        .HasColumnType("bit");
+                    b.Property<string>("LastModifiedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("LastModifiedDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("ToId")
                         .HasColumnType("int");
@@ -79,12 +88,15 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.ToTable("Friends");
                 });
 
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Picture", b =>
+            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Publications", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Body")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -94,35 +106,6 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
 
                     b.Property<string>("ImageUrl")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("PublicationId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("PublicationId");
-
-                    b.ToTable("Pictures");
-                });
-
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Publication", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("LastModifiedBy")
                         .HasColumnType("nvarchar(max)");
@@ -140,12 +123,15 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.ToTable("Publications");
                 });
 
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.User", b =>
+            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Users", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ConfirmationCode")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -180,6 +166,9 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.Property<string>("UserName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("Users");
@@ -187,13 +176,13 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
 
             modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Comentary", b =>
                 {
-                    b.HasOne("SocialeNet.Core.Domain.Entities.Publication", "Publication")
+                    b.HasOne("SocialeNet.Core.Domain.Entities.Publications", "Publication")
                         .WithMany("Comentaries")
                         .HasForeignKey("PublicationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("SocialeNet.Core.Domain.Entities.User", "User")
+                    b.HasOne("SocialeNet.Core.Domain.Entities.Users", "User")
                         .WithMany("Comentaries")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -204,9 +193,9 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Friend", b =>
+            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Friends", b =>
                 {
-                    b.HasOne("SocialeNet.Core.Domain.Entities.User", "User")
+                    b.HasOne("SocialeNet.Core.Domain.Entities.Users", "User")
                         .WithMany("Friends")
                         .HasForeignKey("FromId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -215,20 +204,9 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Picture", b =>
+            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Publications", b =>
                 {
-                    b.HasOne("SocialeNet.Core.Domain.Entities.Publication", "Publication")
-                        .WithMany("Pictures")
-                        .HasForeignKey("PublicationId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Publication");
-                });
-
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Publication", b =>
-                {
-                    b.HasOne("SocialeNet.Core.Domain.Entities.User", "User")
+                    b.HasOne("SocialeNet.Core.Domain.Entities.Users", "User")
                         .WithMany("Publications")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -237,14 +215,12 @@ namespace SocialNet.Infrastructure.Persistence.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Publication", b =>
+            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Publications", b =>
                 {
                     b.Navigation("Comentaries");
-
-                    b.Navigation("Pictures");
                 });
 
-            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.User", b =>
+            modelBuilder.Entity("SocialeNet.Core.Domain.Entities.Users", b =>
                 {
                     b.Navigation("Comentaries");
 

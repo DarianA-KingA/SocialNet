@@ -1,0 +1,33 @@
+﻿@using SocialNet.Core.Application.ViewModels.User;
+@model ConfirmUserViewModel;
+@{
+    ViewData["Title"] = "ActivateUser";
+}
+<div class="row mt-5">
+    <div class="col-6 offset-3">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                <form method="post" asp-controller="User" asp-action="ActivateUser">
+                    <div class="mb-3">
+                        <label asp-for="UserName" class="form-label">Nombre: </label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="ConfirmationCode" class="form-label">Codigo de confirmacion: </label>
+                        <input asp-for="ConfirmationCode" class="form-control" />
+                        <span asp-validation-for="ConfirmationCode" class="text-danger"></span>
+                    </div>
+                    <div style="text-align:center">
+                        <button type="submit" class="btn btn-danger">Activar</button>
+                        <a asp-controller="User" asp-action="Index" class="btn btn-warning">Volver</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

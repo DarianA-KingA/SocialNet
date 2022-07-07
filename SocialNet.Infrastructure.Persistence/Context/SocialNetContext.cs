@@ -17,8 +17,8 @@ namespace SocialNet.Infrastructure.Persistence.Context
         }
         public DbSet<Comentary> Comentaries { get; set; }
         public DbSet<Publications> publications { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Friend> Friends { get; set; }
+        public DbSet<Users> Users { get; set; }
+        public DbSet<Friends> Friends { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -48,10 +48,10 @@ namespace SocialNet.Infrastructure.Persistence.Context
             modelBuilder.Entity<Publications>()
                 .ToTable("Publications");
 
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Users>()
                 .ToTable("Users");
 
-            modelBuilder.Entity<Friend>()
+            modelBuilder.Entity<Friends>()
                 .ToTable("Friends");
             #endregion
 
@@ -62,21 +62,21 @@ namespace SocialNet.Infrastructure.Persistence.Context
             modelBuilder.Entity<Publications>()
                 .HasKey(publication => publication.Id);
 
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Users>()
                 .HasKey(user => user.Id);
 
-            modelBuilder.Entity<Friend>()
+            modelBuilder.Entity<Friends>()
                 .HasKey(friend => friend.Id);
             #endregion
 
             #region Relationships
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Users>()
                 .HasMany<Publications>(user => user.Publications)
                 .WithOne(publication => publication.User)
                 .HasForeignKey(publications => publications.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<User>()
+            modelBuilder.Entity<Users>()
                 .HasMany<Comentary>(user => user.Comentaries)
                 .WithOne(comentary => comentary.User)
                 .HasForeignKey(comentary => comentary.UserId)
@@ -88,8 +88,8 @@ namespace SocialNet.Infrastructure.Persistence.Context
                 .HasForeignKey(comentary => comentary.PublicationId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity<User>()
-                .HasMany<Friend>(user => user.Friends)
+            modelBuilder.Entity<Users>()
+                .HasMany<Friends>(user => user.Friends)
                 .WithOne(friend => friend.User)
                 .HasForeignKey(publications => publications.FromId)
                 .OnDelete(DeleteBehavior.Cascade);

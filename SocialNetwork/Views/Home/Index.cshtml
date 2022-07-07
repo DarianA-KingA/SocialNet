@@ -1,4 +1,8 @@
-﻿@{
+﻿@using SocialNet.Core.Application.ViewModels.Publication;
+@using SocialNet.Core.Application.ViewModels.User;
+@using SocialNet.Core.Application.ViewModels.Commentary;
+@model List<PublicationViewModel>;
+@{
     ViewData["Title"] = "Home Page";
 }
 <div class="row">
@@ -10,17 +14,15 @@
             <div class="card-body">
                 <h4 class="card-title">Amigos</h4>
                 //si la lista de amigos no es null, traer la lista de amigos 
-                @foreach (CategoryViewModel category in ViewBag.Categories)
+                @foreach (UserViewModel friend in ViewBag.Friend)
                 {
                     <div class="mb-3">
-                        <div class="form-check">
-                            <input class="form-check-input" value="@category.Id" type="radio" name="CategoryId" id="category-@category.Id" />
-                            <label class="form-check-label" for="category-@category.Id">@category.Name</label>
+                        <div class="">
+                            <p>@friend.Name @friend.LastName </p>
+                            <p>@friend.UserName</p>
                         </div>
                     </div>
                 }
-
-
             </div>
         </div>
     </div>
@@ -36,47 +38,29 @@
                 @foreach (PublicationViewModel item in Model)
                 {
                     <div class="col-4">
-                        <div class="card shadow-sm">
-                            <img class="bd-placeholder-img card-img-top img-product-size" src="@item.ImageUrl" />
+                        <div class="card" style="width:750px;">
+                            <div class="card-header">
 
+                            </div>
+
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <img src="@item.ImageUrl" class="card-img-top" alt="...">
                             <div class="card-body">
-                                <h4>@item.Name</h4>
-                                <p class="card-text">@item.Description</p>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="fw-bold">@item.CategoryName</span>
-                                    <small class="fw-bold fs-6">$@item.Price</small>
-                                </div>
+                                @foreach (ComentaryViewModel comentary in item.ComentaryPublication)
+                                {
+                                    <img src="@comentary.UserOwner.ImageUrl" alt="Alternate Text" />
+                                    <p>@comentary.UserOwner.Name @comentary.UserOwner.LastName</p>
+
+                                    <p>@comentary.UserComentary</p>
+                                }
                             </div>
                         </div>
+
                     </div>
+
                 }
             }
         </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="col-3" style="">
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-4">
-        <div class="card" style="width:750px;">
-            <div class="card-header">
-
-            </div>
-
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <img src="https://cdn.pocket-lint.com/r/s/970x/assets/images/148296-games-review-xbox-one-s-all-digital-edition-product-shots-image1-xct4hs5njv.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <p>Comentario de prueba</p>
-            </div>
-        </div>
-
-    </div>
-
-</div>

@@ -17,11 +17,13 @@ namespace SocialNet.Core.Application.ViewModels.User
         public string Email { get; set; }
         public string UserName { get; set; }
         public string Pasword { get; set; }
+        public bool status { get; set; }
+        public string ConfirmationCode { get; set; }
 
         //navigation property
         public ICollection<Publications> Publications { get; set; }
         public ICollection<Comentary> Comentaries { get; set; }
 
-        public ICollection<Friend> Friends { get; set; }
+        public ICollection<Friends> Friends { get; set; }
     }
 }

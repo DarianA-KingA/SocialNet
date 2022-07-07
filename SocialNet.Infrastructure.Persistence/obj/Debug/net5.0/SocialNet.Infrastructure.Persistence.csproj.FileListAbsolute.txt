@@ -1,3 +1,4 @@
+C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\obj\Debug\net5.0\SocialNet.Infrastructure.Persistence.csproj.AssemblyReference.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\obj\Debug\net5.0\SocialNet.Infrastructure.Persistence.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\obj\Debug\net5.0\SocialNet.Infrastructure.Persistence.AssemblyInfoInputs.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\obj\Debug\net5.0\SocialNet.Infrastructure.Persistence.AssemblyInfo.cs
@@ -10,7 +11,6 @@ C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\bin\Debug\net5.0\SocialNet.Core.Application.dll
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\bin\Debug\net5.0\SocialeNet.Core.Domain.pdb
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\bin\Debug\net5.0\SocialNet.Core.Application.pdb
-C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\obj\Debug\net5.0\SocialNet.Infrastructure.Persistence.csproj.AssemblyReference.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\obj\Debug\net5.0\SocialNet.Infrastructure.Persistence.csproj.CopyComplete
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\obj\Debug\net5.0\SocialNet.Infrastructure.Persistence.dll
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Persistence\obj\Debug\net5.0\ref\SocialNet.Infrastructure.Persistence.dll

@@ -2,6 +2,7 @@ C:\Users\Darian\source\repos\SocialNetwork\SocialeNet.Core.Domain\bin\Debug\net5
 C:\Users\Darian\source\repos\SocialNetwork\SocialeNet.Core.Domain\bin\Debug\net5.0\SocialeNet.Core.Domain.dll
 C:\Users\Darian\source\repos\SocialNetwork\SocialeNet.Core.Domain\bin\Debug\net5.0\ref\SocialeNet.Core.Domain.dll
 C:\Users\Darian\source\repos\SocialNetwork\SocialeNet.Core.Domain\bin\Debug\net5.0\SocialeNet.Core.Domain.pdb
+C:\Users\Darian\source\repos\SocialNetwork\SocialeNet.Core.Domain\obj\Debug\net5.0\SocialeNet.Core.Domain.csproj.AssemblyReference.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialeNet.Core.Domain\obj\Debug\net5.0\SocialeNet.Core.Domain.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Darian\source\repos\SocialNetwork\SocialeNet.Core.Domain\obj\Debug\net5.0\SocialeNet.Core.Domain.AssemblyInfoInputs.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialeNet.Core.Domain\obj\Debug\net5.0\SocialeNet.Core.Domain.AssemblyInfo.cs

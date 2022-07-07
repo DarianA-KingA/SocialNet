@@ -21,6 +21,9 @@ namespace SocialNet.Core.Application
             //services.AddTransient<IProductService, ProductService>();
             //services.AddTransient<ICategoryService, CategoryService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IPublicationService, PublicationService>();
+            services.AddTransient<IComentaryService, ComentaryService>();
+            services.AddTransient<IFriendService, FriendService>();
             #endregion
         }
     }

@@ -44,8 +44,15 @@ namespace SocialNetwork.Controllers
             UserViewModel userVm = await _userService.Login(vm);
             if (userVm != null)
             {
-                HttpContext.Session.Set<UserViewModel>("user", userVm);
-                return RedirectToRoute(new { controller = "Home", action = "Index" });
+                if (userVm.status)
+                {
+                    HttpContext.Session.Set<UserViewModel>("user", userVm);
+                    return RedirectToRoute(new { controller = "Home", action = "Index" });
+                }
+                else
+                {
+                    ModelState.AddModelError("userValidation", "Debe activar el usuario");
+                }
             }
             else
             {
@@ -81,19 +88,55 @@ namespace SocialNetwork.Controllers
             {
                 return RedirectToRoute(new { controller = "Home", action = "Index" });
             }
-            SaveUserViewModel UserVm = await  _userService.Add(vm);
-            if (UserVm.Id != 0 && UserVm != null)
+            var FindUser = await _userService.FindUserName(vm);
+            if (FindUser == null)
             {
-                UserVm.ImageUrl = UploadFile(vm.File, UserVm.Id);
+                SaveUserViewModel UserVm = await _userService.Add(vm);
+                if (UserVm.Id != 0 && UserVm != null)
+                {
+                    UserVm.ImageUrl = UploadFile(vm.File, UserVm.Id);
 
-                await _userService.Update(UserVm, UserVm.Id);
+                    await _userService.Update(UserVm, UserVm.Id);
+                }
+
+                return RedirectToRoute(new { controller = "User", action = "Index" });
             }
-
-            return RedirectToRoute(new { controller = "User", action = "Index" });
+            else
+            { 
+                ModelState.AddModelError("userValidation", "Ese usuario ya existe");
+            }
+            return View(vm);
         }
         public async Task<IActionResult> UpdatePassword(SaveUserViewModel vm)
         {
             return View();
+        }
+        public IActionResult ActivateUser()
+        {
+            return View(new ConfirmUserViewModel());
+        }
+        [HttpPost]
+        public async Task<IActionResult> ActivateUser(ConfirmUserViewModel cuv)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(cuv);
+            }
+            if (_validateUserSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            var confirmation = await _userService.ActivateUSer(cuv);
+            if (confirmation == null)
+            {
+                ModelState.AddModelError("userValidation", "Datos erroneos");
+                return View(cuv);
+            }
+            else
+            {
+                return RedirectToRoute(new { controller = "User", action = "Index" });
+            }
+
         }
         private string UploadFile(IFormFile file, int id, bool isEditMode = false, string imagePath = "")
         {

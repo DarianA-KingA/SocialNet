@@ -8,5 +8,10 @@ namespace SocialNet.Core.Application.ViewModels.Commentary
 {
     public class SaveComentaryViewModel
     {
+        public int UserId { get; set; }
+
+        public int PublicationId { get; set; }
+
+        public string UserComentary { get; set; }
     }
 }

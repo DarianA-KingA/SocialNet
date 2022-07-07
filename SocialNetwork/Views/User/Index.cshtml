@@ -4,6 +4,8 @@
     ViewData["Title"] = "Login";
 }
 
+<div id="PlaceHolderHere"></div>
+
 <div class="row mt-5">
     <div class="col-6 offset-3">
         <div class="card shadow-sm" >
@@ -22,8 +24,8 @@
                     <div style="text-align:center">
                         <button type="submit" class="btn btn-primary">Iniciar sección</button>
                         <a asp-controller="User" asp-action="Register" class="btn btn-warning">Registrarse</a>
+                        <a asp-controller="User" asp-action="ActivateUser" class="btn btn-success">Activar usuario</a>
                     </div>
-
                 </form>
 
             </div>

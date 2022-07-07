@@ -8,5 +8,8 @@ namespace SocialNet.Core.Application.ViewModels.Friend
 {
     public class SaveFriendViewModel
     {
+        public int FromId { get; set; }
+
+        public int ToId { get; set; }
     }
 }

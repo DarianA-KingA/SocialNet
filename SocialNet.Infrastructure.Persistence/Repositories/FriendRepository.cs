@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SocialNet.Infrastructure.Persistence.Repositories
 {
-    public class FriendRepository : GenericRepository<Friend>,IFriendRepository
+    public class FriendRepository : GenericRepository<Friends>,IFriendRepository
     {
         private readonly SocialNetContext _dbContext;
 
@@ -18,10 +18,10 @@ namespace SocialNet.Infrastructure.Persistence.Repositories
             _dbContext = dbContext;
         }
 
-        public  async Task<List<Friend>> GetAllAsync(int id)
+        public  async Task<List<Friends>> GetAllWithUser()
         {
-            var Friend = await base.GetAllAsync();
-            return Friend.Where(friend => friend.FromId == id || friend.ToId == id).ToList();
+             
+            return await base.GetAllAsync();
         }
     }
 }

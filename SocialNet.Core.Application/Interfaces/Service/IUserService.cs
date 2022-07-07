@@ -8,9 +8,13 @@ using System.Threading.Tasks;
 
 namespace SocialNet.Core.Application.Interfaces.Service
 {
-    public interface IUserService : IGenericService<SaveUserViewModel, UserViewModel, User>
+    public interface IUserService : IGenericService<SaveUserViewModel, UserViewModel, Users>
     {
         Task<UserViewModel> Login(LoginViewModel vm);
+        Task<List<UserViewModel>> GetAllViewModelWithInclude();
+        Task<UserViewModel> ActivateUSer(ConfirmUserViewModel vm);
+        Task<Users> FindUserName(SaveUserViewModel vm);
+
     }
 }
 

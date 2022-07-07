@@ -1,0 +1,34 @@
+﻿@using SocialNet.Core.Application.ViewModels.User;
+@model ConfirmUserViewModel 
+
+<div class="modal fade" id="ActivateUser">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="activateUserLabel">Activar usuario</h4>
+                <button type="button" class="close" data-dismiss="modal"></button>
+                <span>X</span>
+            </div>
+
+            <div class="modal-body">
+                <form action="ActivateUser">
+                    <div class="form-group">
+                        <label asp-for="UserName"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="ConfirmationCode"></label>
+                        <input asp-for="ConfirmationCode" class="form-control" />
+                        <span asp-validation-for="ConfirmationCode"></span>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" data-save="modal">Activar</button>
+            </div>
+        </div>
+    </div>
+</div>
