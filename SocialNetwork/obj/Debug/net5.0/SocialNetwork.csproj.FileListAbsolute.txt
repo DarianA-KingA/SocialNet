@@ -436,7 +436,6 @@ C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\ActivateUser.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs
-C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\_UserModelPartial.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.RazorTargetAssemblyInfo.cache
@@ -448,3 +447,4 @@ C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\ref\So
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.pdb
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.genruntimeconfig.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\Home\MyPublication.cshtml.g.cs
+C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\UpdatePassword.cshtml.g.cs

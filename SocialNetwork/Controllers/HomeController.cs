@@ -40,6 +40,10 @@ namespace SocialNetwork.Controllers
 
         public async Task<IActionResult>  Index()
         {
+            if (!_validateUserSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "User", action = "Index" });
+            }
             SavePublicationViewModel vm = new();
             vm.Users = await _userService.GetAllViewModel(); //<--
 
@@ -107,6 +111,10 @@ namespace SocialNetwork.Controllers
         }
         public async Task<IActionResult> AddPublication(SavePublicationViewModel vm)
         {
+            if (!_validateUserSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "User", action = "Index" });
+            }
             vm.UserId = userViewModel.Id;
             SavePublicationViewModel publation = await _publicationService.Add(vm);
             if (publation.Id != 0 && publation != null)
@@ -179,6 +187,10 @@ namespace SocialNetwork.Controllers
 
         public IActionResult AddFriend(int id)
         {
+            if (!_validateUserSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "User", action = "Index" });
+            }
             SaveFriendViewModel friend = new();
             friend.FromId = userViewModel.Id;
             friend.ToId = id;
@@ -187,6 +199,10 @@ namespace SocialNetwork.Controllers
         }
         public async Task<IActionResult>  DeleteFriend(int id)
         {
+            if (!_validateUserSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "User", action = "Index" });
+            }
             var friend =  await _friendService.GetAll();
             var relationShip = friend.Where(f =>f.FromId == userViewModel.Id && f.ToId == id).ToList();
             if (relationShip == null || relationShip.Count == 0)
@@ -204,6 +220,10 @@ namespace SocialNetwork.Controllers
         }
         public async Task<IActionResult> MyPublication()
         {
+            if (!_validateUserSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "User", action = "Index" });
+            }
             SavePublicationViewModel vm = new();
             vm.Users = await _userService.GetAllViewModel(); //<--
 

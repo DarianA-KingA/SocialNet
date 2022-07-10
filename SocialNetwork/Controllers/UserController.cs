@@ -7,6 +7,7 @@ using SocialNet.Core.Application.Helpers;
 using Microsoft.AspNetCore.Http;
 using System.IO;
 using System;
+using SocialeNet.Core.Application.DTOs.Email;
 
 namespace SocialNetwork.Controllers
 {
@@ -14,11 +15,14 @@ namespace SocialNetwork.Controllers
     {
         private readonly IUserService _userService;
         private readonly ValidateUserSession _validateUserSession;
+        private readonly IEmailService _emailService;
 
-        public UserController(IUserService userService, ValidateUserSession validateUserSession)
+
+        public UserController(IUserService userService, ValidateUserSession validateUserSession, IEmailService emailService)
         {
             _userService = userService;
             _validateUserSession = validateUserSession;
+            _emailService = emailService;
         }
 
         public IActionResult Index()
@@ -107,15 +111,53 @@ namespace SocialNetwork.Controllers
             }
             return View(vm);
         }
-        public async Task<IActionResult> UpdatePassword(SaveUserViewModel vm)
+        public IActionResult UpdatePassword()
         {
-            return View();
+            if (_validateUserSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
+            return View(new UpdatePasswordUserViewModel());
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdatePassword(UpdatePasswordUserViewModel vm)
+        {
+            SaveUserViewModel user = new();
+            user.UserName = vm.UserName;
+            var FindUser = await _userService.FindUserName(user);
+            if (FindUser == null)
+            {
+                ModelState.AddModelError("userValidation", "Ese usuario no existe");
+                return View(vm);
+            }
+            else
+            {
+                user = await _userService.GetByIdSaveViewModel(FindUser.Id);
+                user.Password = vm.Password;
+                await _userService.Update(user, user.Id);
+
+                await _emailService.SendAsync(new EmailRequest
+                {
+                    To = user.Email,
+                    From = _emailService._mailSettings.EmailFrom,
+                    Body = $"Usuario {user.UserName} su nueva password es:{user.Password}",
+                    Subject = "Password reset"
+                });
+
+                return RedirectToRoute(new { controller = "User", action = "Index" });
+            }
+
         }
         public IActionResult ActivateUser()
         {
+            if (_validateUserSession.HasUser())
+            {
+                return RedirectToRoute(new { controller = "Home", action = "Index" });
+            }
             return View(new ConfirmUserViewModel());
         }
         [HttpPost]
+
         public async Task<IActionResult> ActivateUser(ConfirmUserViewModel cuv)
         {
             if (!ModelState.IsValid)
