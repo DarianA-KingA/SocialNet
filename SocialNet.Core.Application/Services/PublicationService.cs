@@ -40,20 +40,16 @@ namespace SocialNet.Core.Application.Services
         {
             var publication = await _publicationRepository.GetAllAsync();
             List<Publications> publications = publication.Where(publication => publication.UserId != userViewModel.Id).ToList();//filtra las publicaciones del usuario
-            var filter = publication;//creo una variable para filtrar la lista
-            foreach (var item in filter)
-            {
-                filter.Remove(item);//vacio la variable para retornarla filtrada
-            }
+            List<Publications> FriendsPublications = new List<Publications>();
             foreach (int id in idFriends)//navego cada id que se me pasa para traer su publicacion
             {
                 var select = publication.Where(p => p.UserId == id).ToList();//aqui esta nueva variable contiene la publicacion de ese Id especifico
                 foreach (var item in select)
                 {
-                    filter.Add(item);//se agrega cada publicacin de ese Id a la lista de filtrado;
+                    FriendsPublications.Add(item);//se agrega cada publicacin de ese Id a la lista de filtrado;
                 }
             }
-            var filtredPublication=  _mapper.Map<List<PublicationViewModel>>(filter).ToList();//se manda la lista de pubblicaciones totalmente filtrada
+            var filtredPublication=  _mapper.Map<List<PublicationViewModel>>(FriendsPublications).ToList();//se manda la lista de pubblicaciones totalmente filtrada
             return filtredPublication;
         } 
     }

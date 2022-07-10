@@ -1,7 +1,33 @@
-﻿
-@{
-    ViewData["Title"] = "SavePublication";
-}
+﻿@using SocialNet.Core.Application.ViewModels.Publication;
+@using SocialNet.Core.Application.ViewModels.User;
+@using SocialNet.Core.Application.ViewModels.Commentary;
+@model SavePublicationViewModel;
+<div class="row">
+    <div class="card" style="width:750px;">
+        <div class="card-body">
+            <form method="post" asp-controller="Home" asp-action="UpdatePublication" enctype="multipart/form-data">
 
-<h1>SavePublication</h1>
+                <div class="mb-3">
+                    <label asp-for="Body" class="form-label">Body: </label>
+                    <textarea asp-for="Body" class="form-control"></textarea>
+                    <span asp-validation-for="Body" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="File" class="form-label">Seleccione una foto:</label>
+                    <input asp-for="File" class="form-control" />
+                    <span asp-validation-for="File" class="text-danger"></span>
+                </div>
+
+                <input type="hidden" asp-for="Id" />
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a asp-controller="Home" asp-action="Index"  class="btn  btn-danger">Cancelar</a>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
 

@@ -1,5 +1,6 @@
 ﻿using SocialeNet.Core.Domain.Entities;
 using SocialNet.Core.Application.ViewModels.Commentary;
+using SocialNet.Core.Application.ViewModels.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,9 @@ namespace SocialNet.Core.Application.ViewModels.Publication
         public string ImageUrl { get; set; }
         public List<ComentaryViewModel> ComentaryPublication { get; set; }
 
+        public SavePublicationViewModel SaveComentary { get; set; }
+
+        public SaveUserViewModel OwnerPublication { get; set; }
 
         //navigation property
         public Users User { get; set; }

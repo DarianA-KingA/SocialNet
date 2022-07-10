@@ -1,8 +1,3 @@
-C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.csproj.AssemblyReference.cache
-C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.AssemblyInfoInputs.cache
-C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.AssemblyInfo.cs
-C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.csproj.CoreCompileInputs.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\bin\Debug\net5.0\SocialNet.Infrastructure.Shared.deps.json
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\bin\Debug\net5.0\SocialNet.Infrastructure.Shared.dll
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\bin\Debug\net5.0\ref\SocialNet.Infrastructure.Shared.dll
@@ -11,6 +6,11 @@ C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\bin\D
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\bin\Debug\net5.0\SocialNet.Core.Application.dll
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\bin\Debug\net5.0\SocialeNet.Core.Domain.pdb
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\bin\Debug\net5.0\SocialNet.Core.Application.pdb
+C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.csproj.AssemblyReference.cache
+C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.AssemblyInfoInputs.cache
+C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.AssemblyInfo.cs
+C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.csproj.CoreCompileInputs.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.csproj.CopyComplete
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\SocialNet.Infrastructure.Shared.dll
 C:\Users\Darian\source\repos\SocialNetwork\SocialNet.Infrastructure.Shared\obj\Debug\net5.0\ref\SocialNet.Infrastructure.Shared.dll

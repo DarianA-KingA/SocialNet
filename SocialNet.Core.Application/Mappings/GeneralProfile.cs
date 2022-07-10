@@ -49,6 +49,8 @@ namespace SocialNet.Core.Application.Mappings
                 .ForMember(x => x.LastModifiedDate, opt => opt.Ignore());
 
             CreateMap<Publications, PublicationViewModel>()
+                .ForMember(x => x.ComentaryPublication, opt => opt.Ignore())
+                .ForMember(x => x.OwnerPublication, opt => opt.Ignore())
                 .ReverseMap()
                 .ForMember(x => x.CreatedBy, opt => opt.Ignore())
                 .ForMember(x => x.CreatedDate, opt => opt.Ignore())
@@ -56,8 +58,12 @@ namespace SocialNet.Core.Application.Mappings
                 .ForMember(x => x.LastModifiedDate, opt => opt.Ignore());
 
             CreateMap<Publications, SavePublicationViewModel>()
-                .ForMember(x => x.UserComentary, opt => opt.Ignore())
-                .ForMember(x => x.PublicationId, opt => opt.Ignore())
+                .ForMember(x => x.File, opt => opt.Ignore())
+                .ForMember(x => x.Users, opt => opt.Ignore())
+                .ForMember(x => x.Publications, opt => opt.Ignore())
+                .ForMember(x => x.Friends, opt => opt.Ignore())
+                .ForMember(x => x.SaveComentary, opt => opt.Ignore())
+                .ForMember(x => x.saveFriend, opt => opt.Ignore())
                 .ReverseMap()
                 .ForMember(x => x.CreatedBy, opt => opt.Ignore())
                 .ForMember(x => x.CreatedDate, opt => opt.Ignore())

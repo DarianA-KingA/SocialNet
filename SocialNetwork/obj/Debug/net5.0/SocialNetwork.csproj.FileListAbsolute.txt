@@ -3,6 +3,7 @@ C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Social
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.AssemblyInfoInputs.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.AssemblyInfo.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.csproj.CoreCompileInputs.cache
+C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.RazorAssemblyInfo.cache
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.RazorAssemblyInfo.cs
@@ -432,8 +433,10 @@ C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\ActivateUser.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\Register.cshtml.g.cs
+C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\_UserModelPartial.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\_ViewImports.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\_ViewStart.cshtml.g.cs
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.RazorTargetAssemblyInfo.cache
@@ -444,5 +447,4 @@ C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Social
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\ref\SocialNetwork.dll
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.pdb
 C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\SocialNetwork.genruntimeconfig.cache
-C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\_UserModelPartial.cshtml.g.cs
-C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\User\ActivateUser.cshtml.g.cs
+C:\Users\Darian\source\repos\SocialNetwork\SocialNetwork\obj\Debug\net5.0\Razor\Views\Home\MyPublication.cshtml.g.cs
